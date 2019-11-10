@@ -23,11 +23,11 @@ describe("capitalize", () => {
   });
 });
 
-// describe("generateInitials", () => {
-//   test("returns the initials of a firstname and surname", () => {
-//     expect(generateInitials("Frederic", "Bonneville")).toBe("F.B");
-//   });
-// });
+describe("generateInitials", () => {
+  test("returns the initials of a firstname and surname", () => {
+    expect(generateInitials("Frederic", "Bonneville")).toBe("F.B");
+  });
+});
 
 // describe("addVAT", () => {
 //   test("adds a VAT of 20% to a price of 100", () => {
