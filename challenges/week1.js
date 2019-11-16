@@ -15,44 +15,54 @@ function addVAT(originalPrice, vatRate) {
 
   if (originalPrice === undefined) throw new Error("originalPrice is required");
   if (vatRate === undefined) throw new Error("vatRate is required");
-  return Number((((originalPrice/100) * vatRate) + originalPrice).toFixed(2))
+  return Number((((originalPrice / 100) * vatRate) + originalPrice).toFixed(2))
 }
 
 
 function getSalePrice(originalPrice, reduction) {
   if (originalPrice === undefined) throw new Error("originalPrice is required");
   if (reduction === undefined) throw new Error("reduction is required");
-  // Add your code here!
+  return (originalPrice - ((originalPrice / 100) * reduction).toFixed(2));
 }
+
 
 function getMiddleCharacter(str) {
   if (str === undefined) throw new Error("str is required");
-  // Add your code here!
 }
+ 
+
+
 
 function reverseWord(word) {
   if (word === undefined) throw new Error("word is required");
-  // Add your code here!
+  return word.split("").reverse().join("");
 }
+
 
 function reverseAllWords(words) {
   if (words === undefined) throw new Error("words is required");
-  // Add your code here!
+  return words.map(reverseWord);
 }
 
 function countLinuxUsers(users) {
   if (users === undefined) throw new Error("users is required");
-  // Add your code here!
+  return users.filter(function (user) {
+    return user.type === "Linux"
+  }).length;
 }
 
 function getMeanScore(scores) {
   if (scores === undefined) throw new Error("scores is required");
-  // Add your code here!
+  //add everything in array /length of array
+  let total = 0;
+  scores.forEach(function (score) {
+    total += score
+  })
+  return Number((total / scores.length).toFixed(2));
 }
 
 function simpleFizzBuzz(n) {
   if (n === undefined) throw new Error("n is required");
-  // Add your code here!
 }
 
 module.exports = {
