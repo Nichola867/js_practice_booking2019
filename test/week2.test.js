@@ -34,7 +34,7 @@ describe("isFromManchester", () => {
     expect(isFromManchester(person)).toBe(true);
   });
 
-  test("returns false if the person is not Manchester", () => {
+  test("returns false if the person is not from Manchester", () => {
     const person = {
       name: "Anisa",
       city: "Leeds",
@@ -71,6 +71,9 @@ describe("getBusNumbers", () => {
   test("returns the correct number of buses for larger numbers of people", () => {
     expect(getBusNumbers(43728)).toBe(1094);
   });
+  test("returns 0 if there are no people", () => {
+    expect(getBusNumbers(0)).toBe(0);
+})
 });
 
 describe("countSheep", () => {
