@@ -1,7 +1,13 @@
+//returns an empty array if empty array passed
+//returns an array of squares of the original numbers
+
 function getSquares(nums) {
   if (nums === undefined) throw new Error("nums is required");
-  // Your code here!
+
+  let squares = nums.map((n) => n * n);
+  return squares;
 }
+
 
 function camelCaseWords(words) {
   if (words === undefined) throw new Error("words is required");

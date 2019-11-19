@@ -6,6 +6,26 @@ const {
   duplicateNumbers
 } = require("../challenges/week3");
 
+describe("getSquares", () => {
+  test.only("returns an empty array if empty array passed", () => {
+    expect(getSquares([])).toEqual([]);
+  });
+
+  test.only("returns an array of squares of the original numbers", () => {
+    expect(getSquares([2, 4, 6])).toEqual([4, 16, 36]);
+    expect(getSquares([2, 4, 6, 1])).toEqual([4, 16, 36, 1]);
+    expect(getSquares([2, 3, 6, 7, 12, 4])).toEqual([4, 9, 36, 49, 144, 16]);
+    expect(getSquares([54, 24, 5, 66, 992])).toEqual([
+      2916,
+      576,
+      25,
+      4356,
+      984064
+    ]);
+  });
+});
+
+
 describe("camelCaseWords", () => {
   test("camel cases a single word (i.e. no capital letter at beginning)", () => {
     expect(camelCaseWords(["my"])).toBe("my");
@@ -25,24 +45,7 @@ describe("camelCaseWords", () => {
   });
 });
 
-describe("getSquares", () => {
-  test("returns an empty array if empty array passed", () => {
-    expect(getSquares([])).toEqual([]);
-  });
 
-  test("returns an array of squares of the original numbers", () => {
-    expect(getSquares([2, 4, 6])).toEqual([4, 16, 36]);
-    expect(getSquares([2, 4, 6, 1])).toEqual([4, 16, 36, 1]);
-    expect(getSquares([2, 3, 6, 7, 12, 4])).toEqual([4, 9, 36, 49, 144, 16]);
-    expect(getSquares([54, 24, 5, 66, 992])).toEqual([
-      2916,
-      576,
-      25,
-      4356,
-      984064
-    ]);
-  });
-});
 
 describe("getTotalSubjects", () => {
   test("returns 0 if no people have subjects", () => {
