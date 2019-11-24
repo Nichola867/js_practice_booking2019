@@ -1,6 +1,5 @@
 //returns an empty array if empty array passed
 //returns an array of squares of the original numbers
-
 function getSquares(nums) {
   if (nums === undefined) throw new Error("nums is required");
 
@@ -11,22 +10,11 @@ function getSquares(nums) {
 //camel cases a single word (i.e. no capital letter at beginning)
 function camelCaseWords(words) {
   if (words === undefined) throw new Error("words is required");
-
-  //make first letter in array upper case
-  var firstUpper = []
-
-  for (var i = 0; i < words.length; i++) {
-    firstUpper.push(words[i].charAt(0).toUpperCase() + words[i].slice(1));
-  }
-  //join together using .join
-  var oneWord = firstUpper.join('');
-
-  //make first letter lower case
-  return oneWord.charAt(0).toLowerCase() + oneWord.slice(1);
+  let allWords = ((words).map((word) => word[0].toUpperCase() + word.slice(1))).join('');
+  return allWords[0].toLowerCase() + allWords.slice(1);
 }
 
 
-//"returns 0 if no people have subjects"
 function getTotalSubjects(people) {
   if (people === undefined) throw new Error("people is required");
 
@@ -41,6 +29,7 @@ function getTotalSubjects(people) {
 
 
 //returns false if no menu items include the specified ingredient"
+//REDO!!!
 
 function checkIngredients(menu, ingredient) {
   if (menu === undefined) throw new Error("menu is required");
