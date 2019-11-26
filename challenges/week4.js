@@ -1,12 +1,16 @@
+//returns an array of numbers smaller than 1
+
 function findSmallNums(nums) {
   if (!nums) throw new Error("nums is required");
-  // Your code here
+ return nums.filter(n => n<1);
 }
+
+//"returns an array of names beginning with the specified character"
 
 function findNamesBeginningWith(names, char) {
   if (!names) throw new Error("names is required");
   if (!char) throw new Error("char is required");
-  // Your code here
+return names.filter(n => n[0]===char);
 }
 
 function findVerbs(words) {
