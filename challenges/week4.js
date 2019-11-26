@@ -20,9 +20,10 @@ function findVerbs(words) {
 return words.filter(n => n.substring(0,3).match("to "));
 }
 
+//returns an array containing only integers"
 function getIntegers(nums) {
   if (!nums) throw new Error("nums is required");
-  // Your code here
+  return nums.filter(n => n % 1 === 0);
 }
 
 function getCities(users) {
