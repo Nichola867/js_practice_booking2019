@@ -13,6 +13,7 @@ function findNamesBeginningWith(names, char) {
 return names.filter(n => n[0]===char);
 }
 
+
 //returns an array of words that are considered verbs (because they begin with 'to ')"
 
 function findVerbs(words) {
@@ -20,16 +21,25 @@ function findVerbs(words) {
 return words.filter(n => n.substring(0,3).match("to "));
 }
 
+
 //returns an array containing only integers"
+
 function getIntegers(nums) {
   if (!nums) throw new Error("nums is required");
   return nums.filter(n => n % 1 === 0);
 }
 
+
+//returns an array of the cities of each user"
+
 function getCities(users) {
   if (!users) throw new Error("users is required");
-  // Your code here
+let cities =  users.map(n => n.data.city.displayName);
+return cities;
 }
+
+
+
 
 function getSquareRoots(nums) {
   if (!nums) throw new Error("nums is required");
