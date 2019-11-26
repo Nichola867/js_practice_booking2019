@@ -13,9 +13,11 @@ function findNamesBeginningWith(names, char) {
 return names.filter(n => n[0]===char);
 }
 
+//returns an array of words that are considered verbs (because they begin with 'to ')"
+
 function findVerbs(words) {
   if (!words) throw new Error("words is required");
-  // Your code here
+return words.filter(n => n.substring(0,3).match("to "));
 }
 
 function getIntegers(nums) {
