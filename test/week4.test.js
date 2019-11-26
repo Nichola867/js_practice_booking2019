@@ -111,12 +111,12 @@ describe("getCities", () => {
   });
 });
 
-// describe("getSquareRoots", () => {
-//   test("gets the square root of each number to 2 decimal places", () => {
-//     const nums = [36, 77, 12, 355, 92, 5];
-//     expect(getSquareRoots(nums)).toEqual([6, 8.77, 3.46, 18.84, 9.59, 2.24]);
-//   });
-// });
+describe("getSquareRoots", () => {
+  test("gets the square root of each number to 2 decimal places", () => {
+    const nums = [36, 77, 12, 355, 92, 5];
+    expect(getSquareRoots(nums)).toEqual([6, 8.77, 3.46, 18.84, 9.59, 2.24]);
+  });
+});
 
 // describe("findSentencesContaining", () => {
 //   const sentencesAboutPackageJson = [
