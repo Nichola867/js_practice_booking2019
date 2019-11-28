@@ -49,16 +49,29 @@ function getSquareRoots(nums) {
 }
 
 
-
+//"returns only the sentences containing the specified string
 function findSentencesContaining(sentences, str) {
   if (!sentences) throw new Error("sentences is required");
   if (!str) throw new Error("str is required");
-  // Your code here
-}
+
+
+ let sentence = sentences.filter(n => n.includes(str));
+ 
+ return sentence;
+ }
+
+
+//"returns the longest side of each set of triangle data
 
 function getLongestSides(triangles) {
   if (!triangles) throw new Error("triangles is required");
-  // Your code here
+   
+//take each item in array and put in increasing number order using .sort, return last index using slice
+function sortNumber(a, b) {
+  return a - b;
+}
+ let sortNums = triangles.map(n => n.sort(sortNumber).slice(-1)[0]);
+return sortNums;
 }
 
 module.exports = {
