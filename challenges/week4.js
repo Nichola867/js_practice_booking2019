@@ -43,7 +43,7 @@ function getCities(users) {
 function getSquareRoots(nums) {
   if (!nums) throw new Error("nums is required");
 
-  let srNums = nums.map(n => Math.sqrt(n).toFixed(2));
+  let srNums = nums.map(n => Math.sqrt(n));
   let decPlace = srNums.map(n => Math.round(n * 100) / 100);
   return decPlace;
 }
@@ -54,24 +54,22 @@ function findSentencesContaining(sentences, str) {
   if (!sentences) throw new Error("sentences is required");
   if (!str) throw new Error("str is required");
 
-
- let sentence = sentences.filter(n => n.includes(str));
- 
- return sentence;
- }
+  const upperStr = str.toUpperCase();
+  let sentence = sentences.filter(n => n.toUpperCase().includes(upperStr));
+  return sentence;
+}
 
 
 //"returns the longest side of each set of triangle data
-
 function getLongestSides(triangles) {
   if (!triangles) throw new Error("triangles is required");
-   
-//take each item in array and put in increasing number order using .sort, return last index using slice
-function sortNumber(a, b) {
-  return a - b;
-}
- let sortNums = triangles.map(n => n.sort(sortNumber).slice(-1)[0]);
-return sortNums;
+
+  //take each item in array and put in decreasing number order using .sort, return first index using slice
+  function sortNumber(a, b) {
+    return b - a;
+  }
+  let sortNums = triangles.map(n => n.sort(sortNumber)[0]);
+  return sortNums;
 }
 
 module.exports = {
