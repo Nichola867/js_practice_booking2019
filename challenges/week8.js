@@ -1,8 +1,12 @@
 const findNextNumber = (nums, n) => {
   if (nums === undefined) throw new Error("nums is required");
   if (n === undefined) throw new Error("n is required");
-  // Your code here!
+  // "returns the next number after the given number in the array"
+ // expect(findNextNumber([5, 3, 7, 8, 1, 10], 7)).toBe(8);
+return nums[nums.indexOf(n)+1]
 };
+
+
 
 const count1sand0s = str => {
   if (str === undefined) throw new Error("str is required");
