@@ -15,18 +15,18 @@ describe("findNextNumber", () => {
     expect(findNextNumber([4, 22, 654, 123, 65, 23, 40, 1], 22)).toBe(654);
   });
 
-//   test("if the number is not found in the array, returns null", () => {
-//     expect(findNextNumber([5, 3, 7, 8, 1, 10], 55)).toBe(null);
-//   });
+  test("if the number is not found in the array, returns null", () => {
+    expect(findNextNumber([5, 3, 7, 8, 1, 10], 55)).toBe(null);
+  });
 
-//   test("if the number is found more than once, returns the number after the first instance", () => {
-//     expect(findNextNumber([5, 3, 7, 8, 1, 3, 10], 3)).toBe(7);
-//   });
+  test("if the number is found more than once, returns the number after the first instance", () => {
+    expect(findNextNumber([5, 3, 7, 8, 1, 3, 10], 3)).toBe(7);
+  });
 
-//   test("if the number is found in the final index position of the array, returns null", () => {
-//     expect(findNextNumber([5, 3, 7, 8, 1, 3, 10], 10)).toBe(null);
-//   });
-// });
+  test("if the number is found in the final index position of the array, returns null", () => {
+    expect(findNextNumber([5, 3, 7, 8, 1, 3, 10], 10)).toBe(null);
+  });
+});
 
 // describe("count1sand0s", () => {
 //   test("returns an object with the count of 1s and 0s in a string", () => {
@@ -178,4 +178,4 @@ describe("findNextNumber", () => {
 //       here: 1
 //     });
 //   });
- });
+ //});

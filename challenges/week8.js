@@ -1,10 +1,14 @@
 const findNextNumber = (nums, n) => {
   if (nums === undefined) throw new Error("nums is required");
   if (n === undefined) throw new Error("n is required");
-  // "returns the next number after the given number in the array"
- // expect(findNextNumber([5, 3, 7, 8, 1, 10], 7)).toBe(8);
-return nums[nums.indexOf(n)+1]
-};
+
+  const indexOfN = nums.indexOf(n);
+
+  if (indexOfN > -1 && indexOfN + 1 < nums.length) {
+    return nums[indexOfN + 1]
+  }
+  return null
+}
 
 
 
