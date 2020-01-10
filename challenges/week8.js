@@ -24,10 +24,6 @@ const count1sand0s = str => {
   }
 }
 
-// test("reverses the digits of a number", () => {
-// expect(reverseNumber(5)).toBe(5);
-//  expect(reverseNumber(104)).toBe(401);
-
 const reverseNumber = n => {
   if (n === undefined) throw new Error("n is required");
 
@@ -37,9 +33,13 @@ const reverseNumber = n => {
   return Number (reverseArray.join(""));
 };
 
+
 const sumArrays = arrs => {
   if (arrs === undefined) throw new Error("arrs is required");
-  // Your code here!
+  
+ let combinedArrs = [].concat.apply([],arrs);
+   return (combinedArrs.reduce((a, b) => a + b)
+)
 };
 
 const arrShift = arr => {

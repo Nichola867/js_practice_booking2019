@@ -62,12 +62,12 @@ describe("reverseNumber", () => {
   });
 });
 
-// describe("sumArrays", () => {
-//   test("returns the total of the numbers in all sub arrays", () => {
-//     const arrs = [[1, 2, 3], [6, 3, 1], [1], [9, 10], [3, 5]];
-//     expect(sumArrays(arrs)).toBe(44);
-//   });
-// });
+describe("sumArrays", () => {
+  test("returns the total of the numbers in all sub arrays", () => {
+    const arrs = [[1, 2, 3], [6, 3, 1], [1], [9, 10], [3, 5]];
+    expect(sumArrays(arrs)).toBe(44);
+  });
+});
 
 // describe("arrShift", () => {
 //   test("returns an array with the first and last items swapped", () => {
