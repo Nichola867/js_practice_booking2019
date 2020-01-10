@@ -28,29 +28,29 @@ describe("findNextNumber", () => {
   });
 });
 
-// describe("count1sand0s", () => {
-//   test("returns an object with the count of 1s and 0s in a string", () => {
-//     expect(count1sand0s("11000")).toEqual({
-//       1: 2,
-//       0: 3
-//     });
+describe("count1sand0s", () => {
+  test("returns an object with the count of 1s and 0s in a string", () => {
+    expect(count1sand0s("11000")).toEqual({
+      1: 2,
+      0: 3
+    });
 
-//     expect(count1sand0s("0101010111")).toEqual({
-//       1: 6,
-//       0: 4
-//     });
+    expect(count1sand0s("0101010111")).toEqual({
+      1: 6,
+      0: 4
+    });
 
-//     expect(count1sand0s("1111111")).toEqual({
-//       1: 7,
-//       0: 0
-//     });
+    //     expect(count1sand0s("1111111")).toEqual({
+    //       1: 7,
+    //       0: 0
+    //     });
 
-//     expect(count1sand0s("0111")).toEqual({
-//       1: 3,
-//       0: 1
-//     });
-//   });
-// });
+    //     expect(count1sand0s("0111")).toEqual({
+    //       1: 3,
+    //       0: 1
+    //     });
+    //   });
+  });
 
 // describe("reverseNumber", () => {
 //   test("reverses the digits of a number", () => {
@@ -59,7 +59,7 @@ describe("findNextNumber", () => {
 //     expect(reverseNumber(12345)).toBe(54321);
 //     expect(reverseNumber(100)).toBe(1); // No leading 0 necessary
 //   });
-// });
+});
 
 // describe("sumArrays", () => {
 //   test("returns the total of the numbers in all sub arrays", () => {
@@ -178,4 +178,4 @@ describe("findNextNumber", () => {
 //       here: 1
 //     });
 //   });
- //});
+//});
