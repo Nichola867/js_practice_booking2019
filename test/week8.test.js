@@ -40,25 +40,26 @@ describe("count1sand0s", () => {
       0: 4
     });
 
-    //     expect(count1sand0s("1111111")).toEqual({
-    //       1: 7,
-    //       0: 0
-    //     });
+        expect(count1sand0s("1111111")).toEqual({
+          1: 7,
+          0: 0
+        });
 
-    //     expect(count1sand0s("0111")).toEqual({
-    //       1: 3,
-    //       0: 1
-    //     });
-    //   });
+        expect(count1sand0s("0111")).toEqual({
+          1: 3,
+          0: 1
+        });
+      });
   });
 
-// describe("reverseNumber", () => {
-//   test("reverses the digits of a number", () => {
-//     expect(reverseNumber(5)).toBe(5);
-//     expect(reverseNumber(104)).toBe(401);
-//     expect(reverseNumber(12345)).toBe(54321);
-//     expect(reverseNumber(100)).toBe(1); // No leading 0 necessary
-//   });
+describe("reverseNumber", () => {
+  test("reverses the digits of a number", () => {
+    expect(reverseNumber(5)).toBe(5);
+    expect(reverseNumber(104)).toBe(401);
+    expect(reverseNumber(12345)).toBe(54321);
+    expect(reverseNumber(100)).toBe(1); 
+    expect(reverseNumber(104)).toBe(401);// No leading 0 necessary
+  });
 });
 
 // describe("sumArrays", () => {
