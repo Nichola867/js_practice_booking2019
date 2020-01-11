@@ -69,18 +69,18 @@ describe("sumArrays", () => {
   });
 });
 
-// describe("arrShift", () => {
-//   test("returns an array with the first and last items swapped", () => {
-//     expect(arrShift([1, 2])).toEqual([2, 1]);
-//     expect(arrShift([1, 2, 3])).toEqual([3, 2, 1]);
-//     expect(arrShift([1, 2, 3, 4])).toEqual([4, 2, 3, 1]);
-//   });
+describe("arrShift", () => {
+  test("returns an array with the first and last items swapped", () => {
+    expect(arrShift([1, 2])).toEqual([2, 1]);
+    expect(arrShift([1, 2, 3])).toEqual([3, 2, 1]);
+    expect(arrShift([1, 2, 3, 4])).toEqual([4, 2, 3, 1]);
+  });
 
-//   test("makes no difference when the array length is < 2", () => {
-//     expect(arrShift([1])).toEqual([1]);
-//     expect(arrShift([])).toEqual([]);
-//   });
-// });
+  test("makes no difference when the array length is < 2", () => {
+    expect(arrShift([1])).toEqual([1]);
+    expect(arrShift([])).toEqual([]);
+  });
+});
 
 // describe("findNeedle", () => {
 //   test("returns true if any of the properties of an object contain the specified string", () => {

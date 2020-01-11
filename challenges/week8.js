@@ -28,24 +28,36 @@ const reverseNumber = n => {
   if (n === undefined) throw new Error("n is required");
 
   let nString = n.toString();
-    let nArray = nString.split("");
+  let nArray = nString.split("");
   let reverseArray = nArray.reverse();
-  return Number (reverseArray.join(""));
+  return Number(reverseArray.join(""));
 };
 
 
 const sumArrays = arrs => {
   if (arrs === undefined) throw new Error("arrs is required");
-  
- let combinedArrs = [].concat.apply([],arrs);
-   return (combinedArrs.reduce((a, b) => a + b)
-)
+
+  let combinedArrs = [].concat.apply([], arrs);
+  return (combinedArrs.reduce((a, b) => a + b)
+  )
 };
+
 
 const arrShift = arr => {
   if (arr === undefined) throw new Error("arr is required");
-  // Your code here!
+
+  if (arr.length < 2) return arr;
+
+  let lastNum = arr.pop()
+  let firstNum = arr.shift()
+
+  arr.push(firstNum)
+  arr.unshift(lastNum)
+
+  return arr
 };
+
+
 
 const findNeedle = (haystack, searchTerm) => {
   if (haystack === undefined) throw new Error("haystack is required");
