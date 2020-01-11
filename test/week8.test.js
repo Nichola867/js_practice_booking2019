@@ -82,27 +82,27 @@ describe("arrShift", () => {
   });
 });
 
-// describe("findNeedle", () => {
-//   test("returns true if any of the properties of an object contain the specified string", () => {
-//     const obj1 = {
-//       name: "LINNMON",
-//       description: "Small round table",
-//       price: 31.89,
-//       store: "Warrington",
-//       code: 12872
-//     };
-//     expect(findNeedle(obj1, "table")).toBe(true);
+describe("findNeedle", () => {
+  test("returns true if any of the properties of an object contain the specified string", () => {
+    const obj1 = {
+      name: "LINNMON",
+      description: "Small round table",
+      price: 31.89,
+      store: "Warrington",
+      code: 12872
+    };
+    expect(findNeedle(obj1, "table")).toBe(true);
 
-//     // Note that the objects provided to the function could have any keys/values
-//     const obj2 = {
-//       product_name: "Sparkle n Shine Dishwasher Tablets",
-//       price: 1.99,
-//       location: "Hulme",
-//       discounted: false,
-//       available: true
-//     };
-//     expect(findNeedle(obj2, "Dishwasher")).toBe(true);
-//   });
+    // Note that the objects provided to the function could have any keys/values
+    const obj2 = {
+      product_name: "Sparkle n Shine Dishwasher Tablets",
+      price: 1.99,
+      location: "Hulme",
+      discounted: false,
+      available: true
+    };
+    expect(findNeedle(obj2, "Dishwasher")).toBe(true);
+ });
 
 //   test("returns false if none of the properties of an object contain the specified string", () => {
 //     const obj1 = {
@@ -179,4 +179,4 @@ describe("arrShift", () => {
 //       here: 1
 //     });
 //   });
-//});
+});
