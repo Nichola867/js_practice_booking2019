@@ -104,41 +104,41 @@ describe("findNeedle", () => {
     expect(findNeedle(obj2, "Dishwasher")).toBe(true);
  });
 
-//   test("returns false if none of the properties of an object contain the specified string", () => {
-//     const obj1 = {
-//       name: "LINNMON",
-//       description: "Small round table",
-//       price: 31.89,
-//       store: "Warrington",
-//       code: 12872
-//     };
-//     expect(findNeedle(obj1, "chair")).toBe(false);
+  test("returns false if none of the properties of an object contain the specified string", () => {
+    const obj1 = {
+      name: "LINNMON",
+      description: "Small round table",
+      price: 31.89,
+      store: "Warrington",
+      code: 12872
+    };
+    expect(findNeedle(obj1, "chair")).toBe(false);
 
-//     // Note that the objects provided to the function could have any keys/values
-//     const obj2 = {
-//       product_name: "Sparkle n Shine Dishwasher Tablets",
-//       price: 1.99,
-//       location: "Hulme",
-//       discounted: false,
-//       available: true
-//     };
-//     expect(findNeedle(obj2, "Carpet Cleaner")).toBe(false);
-//   });
+    // Note that the objects provided to the function could have any keys/values
+    const obj2 = {
+      product_name: "Sparkle n Shine Dishwasher Tablets",
+      price: 1.99,
+      location: "Hulme",
+      discounted: false,
+      available: true
+    };
+    expect(findNeedle(obj2, "Carpet Cleaner")).toBe(false);
+  });
 
-//   test("The search string should not be case sensitive", () => {
-//     const obj1 = {
-//       name: "LINNMON",
-//       description: "Small round table",
-//       price: 31.89,
-//       store: "Warrington",
-//       code: 12872
-//     };
+  test("The search string should not be case sensitive", () => {
+    const obj1 = {
+      name: "LINNMON",
+      description: "Small round table",
+      price: 31.89,
+      store: "Warrington",
+      code: 12872
+    };
 
-//     expect(findNeedle(obj1, "warrington")).toBe(true);
-//     expect(findNeedle(obj1, "linnmon")).toBe(true);
-//     expect(findNeedle(obj1, "Liverpool")).toBe(false);
-//   });
-// });
+    expect(findNeedle(obj1, "warrington")).toBe(true);
+    expect(findNeedle(obj1, "linnmon")).toBe(true);
+    expect(findNeedle(obj1, "Liverpool")).toBe(false);
+  });
+});
 
 // describe("getWordFrequencies", () => {
 //   test("returns the frequencies of each word in a string", () => {
@@ -179,4 +179,4 @@ describe("findNeedle", () => {
 //       here: 1
 //     });
 //   });
-});
+//});
