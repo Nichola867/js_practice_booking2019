@@ -40,24 +40,24 @@ describe("count1sand0s", () => {
       0: 4
     });
 
-        expect(count1sand0s("1111111")).toEqual({
-          1: 7,
-          0: 0
-        });
+    expect(count1sand0s("1111111")).toEqual({
+      1: 7,
+      0: 0
+    });
 
-        expect(count1sand0s("0111")).toEqual({
-          1: 3,
-          0: 1
-        });
-      });
+    expect(count1sand0s("0111")).toEqual({
+      1: 3,
+      0: 1
+    });
   });
+});
 
 describe("reverseNumber", () => {
   test("reverses the digits of a number", () => {
     expect(reverseNumber(5)).toBe(5);
     expect(reverseNumber(104)).toBe(401);
     expect(reverseNumber(12345)).toBe(54321);
-    expect(reverseNumber(100)).toBe(1); 
+    expect(reverseNumber(100)).toBe(1);
     expect(reverseNumber(104)).toBe(401);// No leading 0 necessary
   });
 });
@@ -102,7 +102,7 @@ describe("findNeedle", () => {
       available: true
     };
     expect(findNeedle(obj2, "Dishwasher")).toBe(true);
- });
+  });
 
   test("returns false if none of the properties of an object contain the specified string", () => {
     const obj1 = {
@@ -140,43 +140,43 @@ describe("findNeedle", () => {
   });
 });
 
-// describe("getWordFrequencies", () => {
-//   test("returns the frequencies of each word in a string", () => {
-//     expect(getWordFrequencies("hello world")).toEqual({
-//       hello: 1,
-//       world: 1
-//     });
+describe("getWordFrequencies", () => {
+  test("returns the frequencies of each word in a string", () => {
+    expect(getWordFrequencies("hello world")).toEqual({
+      hello: 1,
+      world: 1
+    });
 
-//     expect(getWordFrequencies("the cat is hairier than the rat")).toEqual({
-//       the: 2,
-//       cat: 1,
-//       is: 1,
-//       hairier: 1,
-//       than: 1,
-//       rat: 1
-//     });
+    expect(getWordFrequencies("the cat is hairier than the rat")).toEqual({
+      the: 2,
+      cat: 1,
+      is: 1,
+      hairier: 1,
+      than: 1,
+      rat: 1
+    });
 
-//     expect(getWordFrequencies("hello hello hello")).toEqual({
-//       hello: 3
-//     });
-//   });
+    expect(getWordFrequencies("hello hello hello")).toEqual({
+      hello: 3
+    });
+  });
 
-//   test("ignores capitalisation", () => {
-//     expect(getWordFrequencies("Hello hello hello")).toEqual({
-//       hello: 3
-//     });
-//   });
+  test("ignores capitalisation", () => {
+    expect(getWordFrequencies("Hello hello hello")).toEqual({
+      hello: 3
+    });
+  });
 
-//   test("ignores punctuation", () => {
-//     // Hint: Google "JavaScript remove special characters from string" to get some ideas!
-//     expect(
-//       getWordFrequencies("Hello, hello hello! What have we here?")
-//     ).toEqual({
-//       hello: 3,
-//       what: 1,
-//       have: 1,
-//       we: 1,
-//       here: 1
-//     });
-//   });
-//});
+  test("ignores punctuation", () => {
+    // Hint: Google "JavaScript remove special characters from string" to get some ideas!
+    expect(
+      getWordFrequencies("Hello, hello hello! What have we here?")
+    ).toEqual({
+      hello: 3,
+      what: 1,
+      have: 1,
+      we: 1,
+      here: 1
+    });
+  });
+});

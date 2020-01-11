@@ -16,8 +16,6 @@ const count1sand0s = str => {
 
   let strArray = str.split("");
 
-  //let zeros = strArray.filter(n => n === "0").length;
-  // let ones = str.filter(n => n === "1").length;
   return {
     0: strArray.filter(n => n === "0").length,
     1: strArray.filter(n => n === "1").length
@@ -72,11 +70,20 @@ const findNeedle = (haystack, searchTerm) => {
 };
 
 
+// test("returns the frequencies of each word in a string", () => {
+//   expect(getWordFrequencies("hello world")).toEqual({
+//     hello: 1,
+//     world: 1
 
 const getWordFrequencies = str => {
   if (str === undefined) throw new Error("str is required");
 
+  let strArray = str.toLowerCase().replace(/[^a-zA-Z0-9 ]/g, '').split(" ");
+  //["hello", "world"]
 
+  const strObj = {}
+  strArray.forEach(n => strObj[n] = strArray.filter(x => x === n).length)
+  return strObj
 };
 
 module.exports = {
