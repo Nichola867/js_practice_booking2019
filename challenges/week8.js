@@ -70,11 +70,6 @@ const findNeedle = (haystack, searchTerm) => {
 };
 
 
-// test("returns the frequencies of each word in a string", () => {
-//   expect(getWordFrequencies("hello world")).toEqual({
-//     hello: 1,
-//     world: 1
-
 const getWordFrequencies = str => {
   if (str === undefined) throw new Error("str is required");
 

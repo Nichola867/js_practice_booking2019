@@ -1,12 +1,15 @@
-/**
- * This function will receive an array of numbers and should return the sum
- * of any numbers which are a multiple of 3 or 5
- * @param {Array} arr
- * @returns {Number}
- */
+
 const sumMultiples = arr => {
   if (arr === undefined) throw new Error("arr is required");
+
+//filter by nums divisible by 3 or 5 (use module === 0)
+//add up remaining nums in array (use reduce)
+  let filteredArr = arr.filter (n => 
+    n % 3 === 0 || n % 5 === 0)
+
+  return ((filteredArr).reduce((a, b) => a + b))
 };
+  
 
 /**
  * This function will receive a string of characters and should return true/false depending on whether it is a valid DNA string. A valid DNA string may contain characters C, G, T or A only.
@@ -68,6 +71,7 @@ const areWeCovered = (staff, day) => {
   if (day === undefined) throw new Error("day is required");
 };
 
+
 module.exports = {
   sumMultiples,
   isValidDNA,
@@ -76,3 +80,5 @@ module.exports = {
   createMatrix,
   areWeCovered
 };
+
+
