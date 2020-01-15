@@ -2,23 +2,25 @@
 const sumMultiples = arr => {
   if (arr === undefined) throw new Error("arr is required");
 
-//filter by nums divisible by 3 or 5 (use module === 0)
-//add up remaining nums in array (use reduce)
-  let filteredArr = arr.filter (n => 
+  //filter by nums divisible by 3 or 5 (use module === 0)
+  //add up remaining nums in array (use reduce)
+  let filteredArr = arr.filter(n =>
     n % 3 === 0 || n % 5 === 0)
 
   return ((filteredArr).reduce((a, b) => a + b))
 };
-  
 
-/**
- * This function will receive a string of characters and should return true/false depending on whether it is a valid DNA string. A valid DNA string may contain characters C, G, T or A only.
- * @param {String} str
- * @returns {Boolean}
- */
+
 const isValidDNA = str => {
   if (str === undefined) throw new Error("str is required");
-};
+
+  let strArray = str.split("");
+  let arr = strArray.filter(n =>
+    n === "C" || n === "A" || n ==="G" || n ==="T")
+
+  return (arr.length > 0)
+}
+
 
 /**
  * This function will receive a valid DNA string (see above) and should return a string of the complementary base pairs. In DNA, T always pairs with A, and C always pairs with G. So a string of "ACTG" would have a complementary DNA string of "TGAC".
