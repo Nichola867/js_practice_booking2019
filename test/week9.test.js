@@ -24,12 +24,17 @@ describe("isValidDNA", () => {
     })
 })
 
-xdescribe("getComplementaryDNA"), () => {
-    test("String return its complementary base pair", () => {
+describe("getComplementaryDNA", () => {
+    test("String returns its complementary base pair", () => {
+        expect(getComplementaryDNA("CTAG")).toBe("GATC")
+        expect(getComplementaryDNA("A")).toBe("T")
+        expect(getComplementaryDNA("C")).toBe("G")
+        expect(getComplementaryDNA("T")).toBe("A")
+        expect(getComplementaryDNA("G")).toBe("C")
         expect(getComplementaryDNA("ACTG")).toBe("TGAC")
         expect(getComplementaryDNA("TTGA")).toBe("AACT")
     })
-}
+})
 
 xdescribe("isItPrime"), () => {
     test("Returns true if number is a prime number and false if not", () => {

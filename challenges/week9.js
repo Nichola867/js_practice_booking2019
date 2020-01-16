@@ -16,7 +16,7 @@ const isValidDNA = str => {
 
   let strArray = str.split("");
   let arr = strArray.filter(n =>
-    n === "C" || n === "A" || n ==="G" || n ==="T")
+    n === "C" || n === "A" || n === "G" || n === "T")
 
   return (arr.length > 0)
 }
@@ -27,9 +27,27 @@ const isValidDNA = str => {
  * @param {String} str
  * @returns {String}
  */
+
+
+
 const getComplementaryDNA = str => {
   if (str === undefined) throw new Error("str is required");
-};
+
+  //change the string to an array using split
+  //map through each item in the array
+  //for each item, run an if statement to change each letter
+
+  let strArray = str.split("");
+
+  const conversion = (n) => {
+    if (n === "A") return "T"
+    if (n === "T") return "A"
+    if (n === "C") return "G"
+    if (n === "G") return "C"
+  }
+  return strArray.map(conversion).join("")
+}
+
 
 /**
  * This function should receive a number and return true/false depending on whether it is a prime number or not. A prime number is a number that can only be divided evenly by 1 and itself (for example, 7)
