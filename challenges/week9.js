@@ -22,13 +22,6 @@ const isValidDNA = str => {
 }
 
 
-/**
- * This function will receive a valid DNA string (see above) and should return a string of the complementary base pairs. In DNA, T always pairs with A, and C always pairs with G. So a string of "ACTG" would have a complementary DNA string of "TGAC".
- * @param {String} str
- * @returns {String}
- */
-
-
 
 const getComplementaryDNA = str => {
   if (str === undefined) throw new Error("str is required");
@@ -49,21 +42,20 @@ const getComplementaryDNA = str => {
 }
 
 
-/**
- * This function should receive a number and return true/false depending on whether it is a prime number or not. A prime number is a number that can only be divided evenly by 1 and itself (for example, 7)
- * @param {Number} n
- * @returns {Boolean}
- */
 
 
 const isItPrime = n => {
   if (n === undefined) throw new Error("n is required");
 
+
   for (let i = 2; i < n; i++) {
-    if (n % i === 0);
-    return true;
+    if (n % i === 0) {
+      return false
+    }
   }
+      return true
 }
+
 
 
 const createMatrix = (n, fill) => {
@@ -108,8 +100,6 @@ const areWeCovered = (staff, day) => {
 
 
 
-
-//staff.includes(day)
 module.exports = {
   sumMultiples,
   isValidDNA,
