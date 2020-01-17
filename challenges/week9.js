@@ -54,25 +54,36 @@ const getComplementaryDNA = str => {
  * @param {Number} n
  * @returns {Boolean}
  */
+
+
 const isItPrime = n => {
   if (n === undefined) throw new Error("n is required");
-};
 
-/**
- * This function should receive a number and return an array of n arrays, each filled with n items. The parameter "fill" should be used as the filler of the arrays. For example, given parameters 3 and "foo" the resulting matrix should be:
- * [
- *   ["foo", "foo", "foo"],
- *   ["foo", "foo", "foo"],
- *   ["foo", "foo", "foo"]
- * ]
- * @param {Number} n
- * @param {Any} fill
- * @returns {Array}
- */
+  for (let i = 2; i < n; i++) {
+    if ( n % i === 0);
+    return true;
+  }
+}
+
+
 const createMatrix = (n, fill) => {
   if (n === undefined) throw new Error("n is required");
   if (fill === undefined) throw new Error("fill is required");
+
+const result = []
+const row = []
+
+for (let i = 0; i < n; i++) {
+row.push(fill)
+}  
+for (let i = 0; i < n; i++) {
+  result.push(row)
+}
+
+return result
 };
+
+
 
 /**
  * This function takes an array of staff objects in the format:

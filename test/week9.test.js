@@ -36,30 +36,30 @@ describe("getComplementaryDNA", () => {
     })
 })
 
-xdescribe("isItPrime"), () => {
+describe("isItPrime", () => {
     test("Returns true if number is a prime number and false if not", () => {
         expect(isItPrime(3)).toBe(true)
         expect(isItPrime(21)).toBe(false)
         expect(isItPrime(89)).toBe(true)
         expect(isItPrime(620)).toBe(false)
     })
-}
+})
 
-xdescribe("createMatrix"), () => {
+describe("createMatrix", () => {
     test("Returns an array of arrays containing a word multipled by a given number", () => {
-        expect(createMatrix(3, "foo")).toBe([
+        expect(createMatrix(3, "foo")).toEqual([
             ["foo", "foo", "foo"],
             ["foo", "foo", "foo"],
             ["foo", "foo", "foo"]])
-        expect(createMatrix(4, "pop")).toBe([
-            ["pop", "pop", "pop"],
-            ["pop", "pop", "pop"],
-            ["pop", "pop", "pop"],
-            ["pop", "pop", "pop"]])
+        expect(createMatrix(4, "pop")).toEqual([
+            ["pop", "pop", "pop", "pop"],
+            ["pop", "pop", "pop", "pop"],
+            ["pop", "pop", "pop", "pop"],
+            ["pop", "pop", "pop", "pop"]])
     })
-}
+})
 
-xdescribe("areWeCovered"), () => {
+xdescribe("areWeCovered", () => {
     test("Returns true if at least 3 staff members are scheduled to work on a given day", () => {
         const staff = [
             { name: "Sally", rota: ["Monday", "Tuesday", "Friday"] },
@@ -71,4 +71,4 @@ xdescribe("areWeCovered"), () => {
         expect(areWeCovered(staff, "Friday")).toBe(true)
         expect(areWeCovered(staff, "Saturday")).toBe(false)
     })
-}
+})
