@@ -59,7 +59,7 @@ describe("createMatrix", () => {
     })
 })
 
-xdescribe("areWeCovered", () => {
+describe("areWeCovered", () => {
     test("Returns true if at least 3 staff members are scheduled to work on a given day", () => {
         const staff = [
             { name: "Sally", rota: ["Monday", "Tuesday", "Friday"] },

@@ -60,7 +60,7 @@ const isItPrime = n => {
   if (n === undefined) throw new Error("n is required");
 
   for (let i = 2; i < n; i++) {
-    if ( n % i === 0);
+    if (n % i === 0);
     return true;
   }
 }
@@ -70,39 +70,46 @@ const createMatrix = (n, fill) => {
   if (n === undefined) throw new Error("n is required");
   if (fill === undefined) throw new Error("fill is required");
 
-const result = []
-const row = []
+  const result = []
+  const row = []
 
-for (let i = 0; i < n; i++) {
-row.push(fill)
-}  
-for (let i = 0; i < n; i++) {
-  result.push(row)
-}
+  for (let i = 0; i < n; i++) {
+    row.push(fill)
+  }
+  for (let i = 0; i < n; i++) {
+    result.push(row)
+  }
 
-return result
+  return result
 };
 
 
 
-/**
- * This function takes an array of staff objects in the format:
- * [
- *  { name: "Sally", rota: ["Monday", "Tuesday", "Friday"] },
- *  { name: "Pedro", rota: ["Saturday", "Sunday", "Tuesday", "Wednesday"] },
- *  ...etc
- * ]
- * and a day of the week. For the café to run successfully, at least 3 staff members are required per day. The function should return true/false depending on whether there are enough staff scheduled for the given day.
- * @param {Array} staff
- * @param {String} day
- * @returns {Boolean}
- */
 const areWeCovered = (staff, day) => {
   if (staff === undefined) throw new Error("staff is required");
   if (day === undefined) throw new Error("day is required");
-};
 
 
+  let dayArray = [];
+
+  for (let i = 0; i < staff.length; i++) {
+    if (staff[i].rota.includes(day)) {
+      dayArray++
+    }
+  }
+
+  if (dayArray >= 3) {
+    return true
+  } else {
+    return false
+  }
+}
+
+
+
+
+
+//staff.includes(day)
 module.exports = {
   sumMultiples,
   isValidDNA,
