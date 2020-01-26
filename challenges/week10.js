@@ -4,7 +4,14 @@
  */
 const sumDigits = n => {
   if (n === undefined) throw new Error("n is required");
-};
+
+  //put numbers into an array
+  //reduce to add up nums
+  const stringArray = n.toString().split("");
+  const numArray = stringArray.map(Number)
+  return numArray.reduce((a, b) => a + b)
+}
+
 
 /**
  * This function creates a range of numbers as an array. It received a start, an end and a step. Step is the gap between numbers in the range. For example, if start = 3, end = 11 and step = 2 the resulting range would be: [3, 5, 7, 9, 11]
