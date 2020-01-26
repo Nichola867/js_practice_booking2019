@@ -17,14 +17,18 @@ const sumDigits = n => {
  * This function creates a range of numbers as an array. It received a start, an end and a step. Step is the gap between numbers in the range. For example, if start = 3, end = 11 and step = 2 the resulting range would be: [3, 5, 7, 9, 11]
  * Both the start and the end numbers are inclusive.
  * Step is an optional parameter. If it is not provided, assume the step is 1.
- * @param {Number} start
- * @param {Number} end
- * @param {Number} step
- */
+*/
+
 const createRange = (start, end, step) => {
   if (start === undefined) throw new Error("start is required");
   if (end === undefined) throw new Error("end is required");
+
+    for (let i = start; i < end + 1; i += step) {
+    return (i)
+  }
 };
+
+
 
 /**
  * This function takes an array of user objects and their usage in minutes of various applications. The format of the data should be as follows:
