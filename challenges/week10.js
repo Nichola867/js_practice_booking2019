@@ -23,7 +23,7 @@ const createRange = (start, end, step) => {
   if (start === undefined) throw new Error("start is required");
   if (end === undefined) throw new Error("end is required");
 
-    for (let i = start; i < end + 1; i += step) {
+  for (let i = start; i < end + 1; i += step) {
     return (i)
   }
 };
@@ -59,10 +59,44 @@ const createRange = (start, end, step) => {
  * For example, if passed the above users and the date "2019-05-04" the function should return ["beth_1234"] as she used over 100 minutes of screentime on that date.
  * @param {Array} users
  */
+
+
 const getScreentimeAlertList = (users, date) => {
   if (users === undefined) throw new Error("users is required");
   if (date === undefined) throw new Error("date is required");
-};
+
+  //"screentime" - add up values in an object to see if screentime >100:
+  const screentime = (usage) => {
+    let sum = 0
+
+    for (let key in usage) {
+      sum += usage[key]
+    }
+    return sum
+  }
+
+  //"currentDay" - filter users by date given. returns an array of 
+  const currentDay = (screentime) => {
+    return screentime.filter(n => n.date === date)
+  }
+
+  const matchingUsers = []
+
+  users.forEach(n => {
+    const matchingday = currentDay(n.screenTime)
+    if (matchingday.length > 0) {
+      const usage = matchingday[0].usage
+
+      if (screentime(usage) > 100) {
+        matchingUsers.push(n.username)
+      }
+    }
+  })
+
+  //users that have more than 100 mins of screentime
+  return matchingUsers
+}
+
 
 /**
  * This function will receive a hexadecimal color code in the format #FF1133. A hexadecimal code is a number written in hexadecimal notation, i.e. base 16. If you want to know more about hexadecimal notation:
@@ -76,6 +110,15 @@ const getScreentimeAlertList = (users, date) => {
  */
 const hexToRGB = hexStr => {
   if (hexStr === undefined) throw new Error("hexStr is required");
+ 
+  //to turn each number in its rgb equivalent use parseint(string, base) 
+ 
+  let r = parseInt(hexStr.substring(1, 3), 16)
+  let g = parseInt(hexStr.substring(3, 5), 16)
+  let b = parseInt(hexStr.substring(5, 7), 16)
+
+   //return the string back using ``
+return `rgb(${r},${g},${b})`
 };
 
 /**
