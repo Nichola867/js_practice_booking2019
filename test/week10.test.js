@@ -58,4 +58,54 @@ describe("hexToRGB", () => {
 })
 
 
-
+describe("findWinner", () => {
+    test("Returns X if player X has won", () => {
+        expect(findWinner([
+            ["X", "0", null],
+            ["X", null, "0"],
+            ["X", null, "0"]
+        ])).toBe("X")
+    })
+    test("Returns 0 if player 0 has won", () => {
+        expect(findWinner([
+            ["0", "0", null],
+            ["X", "0", "0"],
+            ["X", null, "0"]
+        ])).toBe("0")
+    })
+    test("Returns null if no one has won", () => {
+        expect(findWinner([
+            [null, null, "X"],
+            ["0", null, "X"],
+            ["X", "0", "0"]
+        ])).toBe(null)
+    })
+    test("Returns X if player X has won vertically", () => {
+        expect(findWinner([
+            ["X", "0", null],
+            ["X", null, "0"],
+            ["X", null, "0"]
+        ])).toBe("X")
+    })
+    test("Returns 0 if player 0 has won diagonally", () => {
+        expect(findWinner([
+            ["0", "0", null],
+            ["X", "0", "0"],
+            ["X", null, "0"]
+        ])).toBe("0")
+    })
+    test("Returns x if no one has horizontally", () => {
+        expect(findWinner([
+            ["0", "0", null],
+            ["X", "X", "X"],
+            ["X", null, "0"]
+        ])).toBe("X")
+    })
+    test("Returns x where a row of x's overwrites a row of nulls", () => {
+        expect(findWinner([
+            [null, null, null],
+            ["X", "X", "X"],
+            ["X", null, "0"]
+        ])).toBe("X")
+    })
+})

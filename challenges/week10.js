@@ -1,7 +1,3 @@
-/**
- * This function takes a number, e.g. 123 and returns the sum of all its digits, e.g 6 in this example.
- * @param {Number} n
- */
 const sumDigits = n => {
   if (n === undefined) throw new Error("n is required");
 
@@ -13,12 +9,6 @@ const sumDigits = n => {
 }
 
 
-/**
- * This function creates a range of numbers as an array. It received a start, an end and a step. Step is the gap between numbers in the range. For example, if start = 3, end = 11 and step = 2 the resulting range would be: [3, 5, 7, 9, 11]
- * Both the start and the end numbers are inclusive.
- * Step is an optional parameter. If it is not provided, assume the step is 1.
-*/
-
 const createRange = (start, end, step) => {
   if (start === undefined) throw new Error("start is required");
   if (end === undefined) throw new Error("end is required");
@@ -29,43 +19,11 @@ const createRange = (start, end, step) => {
 };
 
 
-
-/**
- * This function takes an array of user objects and their usage in minutes of various applications. The format of the data should be as follows:
- * [
- *  {
- *    username: "beth_1234",
- *    name: "Beth Smith",
- *    screenTime: [
- *                 { date: "2019-05-01", usage: { twitter: 34, instagram: 22, facebook: 40} },
- *                 { date: "2019-05-02", usage: { twitter: 56, instagram: 40, facebook: 31} },
- *                 { date: "2019-05-03", usage: { twitter: 12, instagram: 15, facebook: 19} },
- *                 { date: "2019-05-04", usage: { twitter: 10, instagram: 56, facebook: 61} },
- *                ]
- *   },
- *   {
- *    username: "sam_j_1989",
- *    name: "Sam Jones",
- *    screenTime: [
- *                 { date: "2019-06-11", usage: { mapMyRun: 0, whatsApp: 0, facebook: 0, safari: 10} },
- *                 { date: "2019-06-13", usage: { mapMyRun: 0, whatsApp: 0, facebook: 0, safari: 16} },
- *                 { date: "2019-06-14", usage: { mapMyRun: 0, whatsApp: 0, facebook: 0, safari: 31} },
- *                ]
- *   },
- * ]
- *
- * The function should return an array of usernames of users who have used more than 100 minutes of screentime for a given date.
- * The date will be provided in the format "2019-05-04" (YYYY-MM-DD)
- * For example, if passed the above users and the date "2019-05-04" the function should return ["beth_1234"] as she used over 100 minutes of screentime on that date.
- * @param {Array} users
- */
-
-
 const getScreentimeAlertList = (users, date) => {
   if (users === undefined) throw new Error("users is required");
   if (date === undefined) throw new Error("date is required");
 
-  //"screentime" - add up values in an object to see if screentime >100:
+  //"screentime" - adds up values in an object:
   const screentime = (usage) => {
     let sum = 0
 
@@ -75,7 +33,7 @@ const getScreentimeAlertList = (users, date) => {
     return sum
   }
 
-  //"currentDay" - filter users by date given. returns an array of 
+  //"currentDay" - filter returns an array of screenTime based on a given date
   const currentDay = (screentime) => {
     return screentime.filter(n => n.date === date)
   }
@@ -98,42 +56,70 @@ const getScreentimeAlertList = (users, date) => {
 }
 
 
-/**
- * This function will receive a hexadecimal color code in the format #FF1133. A hexadecimal code is a number written in hexadecimal notation, i.e. base 16. If you want to know more about hexadecimal notation:
- * https://www.youtube.com/watch?v=u_atXp-NF6w
- * For colour codes, the first 2 chars (FF in this case) represent the amount of red, the next 2 chars (11) represent the amound of green, and the last 2 chars (33) represent the amount of blue.
- * Colours can also be represented in RGB format, using decimal notation.
- * This function should transform the hex code into an RGB code in the format:
- * "rgb(255,17,51)"
- * Hint: You will need to convert each hexadecimal value for R, G and B into its decimal equivalent!
- * @param {String} str
- */
 const hexToRGB = hexStr => {
   if (hexStr === undefined) throw new Error("hexStr is required");
- 
+
   //to turn each number in its rgb equivalent use parseint(string, base) 
- 
   let r = parseInt(hexStr.substring(1, 3), 16)
   let g = parseInt(hexStr.substring(3, 5), 16)
   let b = parseInt(hexStr.substring(5, 7), 16)
 
-   //return the string back using ``
-return `rgb(${r},${g},${b})`
+  //return the string back using ``
+  return `rgb(${r},${g},${b})`
 };
 
-/**
- * This function takes a noughts and crosses board represented as an array, where an empty space is represented with null.
- * [
- *  ["X", "0", null],
- *  ["X", null, "0"],
- *  ["X", null, "0"]
- * ]
- * The function should return "X" if player X has won, "0" if the player 0 has won, and null if there is currently no winner.
- * @param {Array} board
- */
+
 const findWinner = board => {
   if (board === undefined) throw new Error("board is required");
+
+  const getHorizontalWinner = () => {
+    const matchingLine = board
+      .filter(line => line[0] === line[1] && line[1] === line[2] && line[0] !== null)
+    return matchingLine.length > 0 ? matchingLine[0][0] : null
+  }
+
+  const getDiagonalWinner = () => {
+    const matchingLineDiagLeft = board[0][0] === board[1][1] && board[1][1] === board[2][2] && board[0][0] !== null
+    const matchingLineDiagRight = board[0][2] === board[1][1] && board[1][1] === board[2][0] && board[0][2] !== null
+
+    if (matchingLineDiagLeft === true) {
+      return board[0][0]
+    } else if (matchingLineDiagRight === true) {
+      return board[0][2]
+    }
+    return null
+  }
+
+  const getVerticalWinner = () => {
+    for (let i = 0; i < 3; i++) {
+      if (board[0][i] === board[1][i] &&  board[1][i] === board[2][i] && board[0][0] !== null) {
+        return board[0][i]
+      }
+    }
+    return null
+  }
+
+  const horizonalWinner = getHorizontalWinner()
+  const verticalWinner = getVerticalWinner()
+  const diagonalWinner = getDiagonalWinner()
+
+
+  if (horizonalWinner !== null) {
+    return horizonalWinner
+  }
+
+  if (verticalWinner !== null) {
+    return verticalWinner
+  }
+
+  if (diagonalWinner !== null) {
+    return diagonalWinner
+  }
+  return null
 };
+
+
+
 
 module.exports = {
   sumDigits,
